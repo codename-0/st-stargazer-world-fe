@@ -1,0 +1,1 @@
+export const PLACEHOLDER_PROFILE = "/images/placeholder-pfp.png";
