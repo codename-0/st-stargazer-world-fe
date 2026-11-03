@@ -19,10 +19,10 @@ export default function Profile({ name, role, bio, photo, links = [] }: ProfileP
           md={{ span: true, order: 1 }}
           className="text-md-end p-4 shadow-sm soft-glass-card"
         >
-          <h2 className="fw-bold mb-1">{name}</h2>
-          <p className="text-body-secondary mb-3">{role}</p>
+          <h2 className="text-start text-md-end fw-bold mb-1">{name}</h2>
+          <p className="text-start text-md-end text-body-secondary mb-3">{role}</p>
           <p className="ms-md-auto" style={{ maxWidth: "60ch" , textAlign: "justify"}}>{bio}</p>
-          <Stack direction="horizontal" gap={2} className="flex-wrap justify-content-md-end">
+          <Stack direction="horizontal" gap={2} className="flex-wrap justify-content-end">
             {links.map((l) => (
               <Button key={l.href} href={l.href} variant="outline-secondary" size="sm">
                 {l.label}
