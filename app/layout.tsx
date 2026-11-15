@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,13 +46,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             brandName="ST-STARGAZER WORLD"
             menuTitle="MENU"
             links={[
-              { href: "/", label: "Home" },
               { href: "/projects", label: "Projects" },
               { href: "/about", label: "About" },
               { href: "/contact", label: "Contact" },
             ]}
           />
-          {children}
+          <div style={{ minHeight: "calc(100dvh - var(--nav-h, 72px))" }}>
+            {children}
+          </div>
+          <Footer />
         </div>
       </body>
     </html>

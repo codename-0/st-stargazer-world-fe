@@ -22,10 +22,10 @@ export default function Navbar({
   const pathname = usePathname();
 
   return (
-    <BsNavbar expand="sm" sticky="top" className="themed-nav py-3">
+    <BsNavbar expand="sm" className="themed-nav py-3 px-4">
       <Container>
         <div className="d-flex align-items-center justify-content-between w-100">
-          <BsNavbar.Brand className="fw-bold text-truncate flex-grow-1 me-2" style={{ minWidth: 0 }}>
+          <BsNavbar.Brand as={Link} href="/" className="fw-bold text-truncate flex-grow-1 me-2" style={{ minWidth: 0 }}>
             {brandName}
           </BsNavbar.Brand>
           <BsNavbar.Toggle aria-controls="main-nav" />

@@ -3,19 +3,27 @@ import React from 'react';
 import Image from "next/image";
 import styles from './common.module.css';
 
-interface FilmStripProps {
+export interface FilmStripProps {
   images: string[];
   speedInSeconds?: number;
+  direction?: "forward" | "backward";
 }
 
-export const FilmStrip: React.FC<FilmStripProps> = ({ images, speedInSeconds = 25 }) => {
+export const FilmStrip: React.FC<FilmStripProps> = ({
+  images,
+  speedInSeconds = 25,
+  direction = "forward",
+}) => {
   const displayImages = [...images, ...images, ...images, ...images];
 
   return (
     <div className={styles.stripContainer}>
-      <div 
-        className={styles.track} 
-        style={{ animationDuration: `${speedInSeconds}s` }}
+      <div
+        className={styles.track}
+        style={{
+          animationDuration: `${speedInSeconds}s`,
+          animationDirection: direction === "backward" ? "reverse" : "normal",
+        }}
       >
         {displayImages.map((src, index) => (
           <div key={index} className={styles.filmFrame}>
